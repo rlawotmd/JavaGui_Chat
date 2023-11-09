@@ -38,13 +38,12 @@ public class Server {
                     if(e.getKeyCode() == KeyEvent.VK_ENTER) {
                         String s = serverGui.getChatMessage().trim();
                         if(!s.isEmpty()) {
-                            if(!s.equals(serverGui.noticeMsg)) {
+                            if (!s.equals(serverGui.noticeMsg)) {
                                 serverGui.appendMessage("SERVER : " + s);
                                 sendToAll("SERVER : " + s);
-                                serverGui.chatTextField.setText("");
+                                serverGui.setTextFieldBlank();
                             }
                         }
-                        serverGui.setTextFieldBlank();
                     }
                 }
             });
@@ -57,10 +56,9 @@ public class Server {
                         if(!s.equals(serverGui.noticeMsg)) {
                             serverGui.appendMessage("SERVER : " + s);
                             sendToAll("SERVER : " + s);
-                            serverGui.chatTextField.setText("");
+                            serverGui.setTextFieldBlank();
                         }
                     }
-                    //serverGui.setTextFieldBlank();
                 }
             });
 
